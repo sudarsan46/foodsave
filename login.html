@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FoodSaver</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <h2>🍴 FoodSaver</h2>
+    <div id="nav-user"></div>
+</header>
+
+<!-- AUTH -->
+<div id="auth-section" class="center-box">
+    <div class="card">
+        <h3>Login</h3>
+        <input id="login-email" placeholder="Email">
+        <input id="login-pass" type="password" placeholder="Password">
+        <button onclick="login()" class="btn">Login</button>
+
+        <hr>
+
+        <h3>Register</h3>
+        <input id="reg-name" placeholder="Name">
+        <input id="reg-email" placeholder="Email">
+        <input id="reg-pass" type="password" placeholder="Password">
+
+        <select id="reg-role">
+            <option value="USER">User</option>
+            <option value="PROVIDER">Provider</option>
+        </select>
+
+        <button onclick="register()" class="btn">Register</button>
+    </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" style="display:none;" class="container">
+
+    <!-- PROVIDER -->
+    <div id="provider-section" style="display:none;">
+        <div class="card">
+            <h3>Add Food</h3>
+            <input id="food-name" placeholder="Food Name">
+            <input id="food-qty" type="number" placeholder="Quantity">
+            <input id="food-price" type="number" placeholder="Price">
+            <input id="food-loc" placeholder="Location">
+            <button onclick="addFood()" class="btn">Add Food</button>
+        </div>
+
+        <h3>📦 Incoming Orders</h3>
+        <div id="provider-orders" class="grid"></div>
+    </div>
+
+    <!-- USER -->
+    <div id="user-section" style="display:none;">
+        <h3>🍽 Available Food</h3>
+        <div id="food-list" class="grid"></div>
+
+        <h3>📦 My Orders</h3>
+        <div id="user-orders" class="grid"></div>
+    </div>
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <h3>Order</h3>
+        <input id="qty" type="number" value="1">
+        <button onclick="placeOrder()" class="btn">Confirm</button>
+        <button onclick="closeModal()" class="btn danger">Cancel</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
